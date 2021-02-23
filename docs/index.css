@@ -60,7 +60,7 @@ nav{
 	align-items:center;
 	}
 nav>.text{
-	flex:none;width:400px;
+	flex:none;
 	font-size:40px;font-weight:bold;
 }
 
