@@ -1,0 +1,112 @@
+body{margin:0px;} /*把留白去除*/
+a{
+	text-decoration:none; /* 去除超連結底線 */
+	color:black;
+}
+header{
+	display:flex; /* 把換行的item 並排 */
+	padding:10px;
+	font-size:20px;
+	margin:5px;
+    height:30px;
+	} 
+header>.logo{
+	flex:none;
+	width:150px;
+	font-weight:bold;
+	margin:5px; /* 和旁邊區塊有一點間隔，成功置中 */
+}
+
+header>.blank{ /* 中間自動填滿 */
+	flex:auto;
+}
+
+header>.item{
+	flex:none;
+	margin:5px;
+}
+
+label{display:none;} /* 600px以上不顯示 */
+input{display:none;} /* 永不顯示checkbox方框 */
+ul{
+    display:none; /* 600px以上不顯示 */
+    list-style-type:none; /* 把ul的黑點去掉 */
+}
+@media (max-width:600px){
+    header>.item{
+        display:none;
+    }
+    label{
+        display:block;
+    }
+    #burger:checked+ul{
+        display:block;
+        position:absolute;
+        top:35px;right:10px;width:100px;
+        background-color:#D1E9E9;opacity:0.8;
+        padding:10px; /* padding置中外，如果沒有設width還會幫忙調方框距離 */
+        line-height:2; /* 字與字之間的距離 */
+        text-align: center; /* 有調width之後就可以設字置中 */
+    }
+}
+
+
+
+nav{
+	height:300px;
+	background-color:#81C0C0;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	}
+nav>.text{
+	flex:none;width:400px;
+	font-size:40px;font-weight:bold;
+}
+
+main{
+	display:flex;flex-wrap:wrap; /* 螢幕變小可換行功能 */
+	justify-content:center; 
+	align-items:center;
+	margin-top:40px;
+	}
+
+
+.box{
+	/* 設定父親定位點 */
+	position:relative;
+	float:left; /* 圖片並排 */
+	width:270px;
+	margin:10px; /* margin左右都要算所以是(270+20)x4=1160 */
+	background-color:#D1E9E9;
+	justify-content:center;
+	align-items:center;
+}
+
+img{
+	display:block;margin:auto;
+	max-width:100%; /*保有圖片原始大小。保有圖片原始大小。瀏覽器變大，最大也是原始尺寸大小；瀏覽器縮小會等比例縮小*/
+	height:auto;
+}
+
+h4{
+	background-color:#D1E9E9;
+	margin:0px;height:30px;
+	text-align:center;
+	line-height:2; /* 自調 置中對齊*/
+}
+
+@media (max-width:1200px){
+	.box{
+		width:45%;
+		right:-15px; /* 手調沒有置中的部分QQ*/
+	}
+}
+
+@media (max-width:600px){
+	.box{
+		width:90%; /* 會自動套用到上面的right */
+	}
+}
+
+footer{height:40px;}
