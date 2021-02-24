@@ -39,12 +39,12 @@ ul{
     label{
         display:block;
     }
-    #burger:checked+ul{
+    #burger:checked+ul{ /* input id="burger" */
         display:block;
         position:absolute;
         top:35px;right:10px;width:100px;
         background-color:#D1E9E9;opacity:0.8;
-        padding:10px; /* padding置中外，如果沒有設width還會幫忙調方框距離 */
+        padding:10px; /* 如果沒有設width除了調文字與方框距離之外，會直接置中 */
         line-height:2; /* 字與字之間的距離 */
         text-align: center; /* 有調width之後就可以設字置中 */
     }
@@ -73,19 +73,19 @@ main{
 
 
 .box{
-	/* 設定父親定位點 */
-	position:relative;
-	float:left; /* 圖片並排 */
+	/*float:left;*/ /* 舊用法，老師不推薦使用 */
+	display:inline-block;
 	width:270px;
 	margin:10px; /* margin左右都要算所以是(270+20)x4=1160 */
-	background-color:#D1E9E9;
-	justify-content:center;
+	/*background-color:#D1E9E9;*/ /* for check使用*/
+	justify-content:center; 
 	align-items:center;
 }
 
+
 img{
-	display:block;margin:auto;
-	max-width:100%; /*保有圖片原始大小。保有圖片原始大小。瀏覽器變大，最大也是原始尺寸大小；瀏覽器縮小會等比例縮小*/
+	display:block; /* 可以和h4鎖在box裡*/
+	max-width:100%; /*保有圖片原始大小。瀏覽器變大，最大也是原始尺寸大小；瀏覽器縮小會等比例縮小*/
 	height:auto;
 }
 
@@ -93,19 +93,21 @@ h4{
 	background-color:#D1E9E9;
 	margin:0px;height:30px;
 	text-align:center;
-	line-height:2; /* 自調 置中對齊*/
+	line-height:2; /* 自調 垂直置中*/
 }
 
 @media (max-width:1200px){
 	.box{
-		width:45%;
-		right:-15px; /* 手調沒有置中的部分QQ*/
+		width:45%; /* 一個方塊站螢幕滿版的45% */
+	}
+	.container{ /* 手調置中，也會套用到600px以下~*/
+		margin-left:25px;
 	}
 }
 
 @media (max-width:600px){
 	.box{
-		width:90%; /* 會自動套用到上面的right */
+		width:90%; /* 一個方塊站螢幕滿版的90% */
 	}
 }
 
