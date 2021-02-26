@@ -23,6 +23,26 @@ header>.blank{ /* 中間自動填滿 */
 	flex:auto;
 }
 
+
+header>.item{
+	flex:none;
+	margin:5px;
+	display:none;
+}
+
+@media(min-width:600px){ /* 600以上的時候 */
+	#icon{
+		display:none;
+	}
+	.menu{
+	display:none;
+	}
+	header>.item{
+		display:block;
+		color:black;
+	}
+}
+
 #icon{
 	margin:5px;
 }
@@ -31,10 +51,10 @@ header>.blank{ /* 中間自動填滿 */
 	list-style-type:none;
 	height:100vh;
 	width:50%;
-	position:absolute;top:40px;right:0;
+	position:absolute;top:40px;left:0;
 	padding:0px; /* 讓ul不留多餘空間 */
 	/* border:1px solid #000000; */
-	transform: translateX(100%); /*選單收起狀態translateX X代表X軸  所以右邊是100%,左邊是-100% */
+	transform: translateX(-100%); /*選單收起狀態translateX X代表X軸  所以右邊是100%,左邊是-100% */
 	transition: 0.5s; /* 收放動畫! */
 }
 
@@ -59,24 +79,8 @@ header>.blank{ /* 中間自動填滿 */
 
 }
 
-@media(min-width:600px){ /* 600以上的時候 */
-	#icon{
-		display:none;
-	}
-	.menu{
-		transform:translateX(0%);
-		display:flex;
-		height:auto;
-		width:auto;
-		position:absolute;top:0px;right:5px;
-		margin:5px;
-		background-color:white;
-	}
-	.menu li a{
-		border-bottom:0px;
-	}
 
-}
+
 
 
 
